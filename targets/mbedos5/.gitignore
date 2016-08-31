@@ -2,3 +2,4 @@ mbed-os
 jerryscript-mbed
 .build
 .mbed
+mbed_settings.py
