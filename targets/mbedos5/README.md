@@ -70,7 +70,7 @@ Once you have all of your dependencies installed, you can build the project as f
 
 ```bash
 git clone https://github.com/ARMmbed/jerryscript
-cd jerryscript
+cd jerryscript/targets/mbedos5
 make getlibs
 # NRF52 Development Kit:
 make BOARD=NRF52_DK
@@ -78,7 +78,7 @@ make BOARD=NRF52_DK
 make BOARD=K64F
 ```
 
-The produced file (in .build/*[BOARD]*/GCC_ARM) can then be uploaded to your board, and will
+The produced file (in .build/**[BOARD]**/GCC_ARM) can then be uploaded to your board, and will
 run when you press reset.
 
 If you make a modification to main.js, you can simply rerun make, and it will remember your
