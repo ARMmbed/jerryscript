@@ -1,5 +1,5 @@
 mbed-os
-jerryscript-mbed
+mbed-events
 .build
 .mbed
 mbed_settings.py
