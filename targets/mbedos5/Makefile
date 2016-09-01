@@ -6,7 +6,7 @@
 #
 # make BOARD=K64F VARIANT=FRDM
 
-BOARD=
+BOARD=$(subst [mbed] ,,$(shell mbed target))
 VARIANT=
 HEAPSIZE=16
 
