@@ -78,8 +78,8 @@ make BOARD=NRF52_DK
 make BOARD=K64F
 ```
 
-The produced file (in .build/<BOARD>/GCC_ARM) can then be uploaded to your board, and will
-run automatically.
+The produced file (in .build/*[BOARD]*/GCC_ARM) can then be uploaded to your board, and will
+run when you press reset.
 
 If you make a modification to main.js, you can simply rerun make, and it will remember your
 previous choice of board:
