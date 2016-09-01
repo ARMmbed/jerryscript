@@ -1,0 +1,14 @@
+{
+    "target_overrides": {
+        "NUCLEO_F411RE": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["ST_BLUENRG"],
+            "target.macros_add": ["IDB0XA1_D13_PATCH"]
+        },
+        "K64F": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["ST_BLUENRG"],
+            "target.macros_add": ["IDB0XA1_D13_PATCH"]
+        }
+    }
+}

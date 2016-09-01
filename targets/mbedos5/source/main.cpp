@@ -22,6 +22,11 @@
 // Provides the base wrapper registration symbol that JSMBED_USE_WRAPPER uses.
 // This means all of the base handlers will be registered.
 #include "jerryscript-mbed-drivers/lib_drivers.h"
+
+#ifdef FEATURE_BLE
+#include "jerryscript-mbed-ble/lib_ble.h"
+#endif
+
 #include "jerryscript-mbed-event-loop/EventLoop.h"
 #include "Callback.h"
 
@@ -30,6 +35,10 @@ using mbed::Callback;
 
 int main() {
   JERRY_USE_MBED_LIBRARY(base);
+
+#ifdef FEATURE_BLE
+  JERRY_USE_MBED_LIBRARY(ble);
+#endif
 
   // Incude more wrapper packages here if you want to use them. For exmaple:
   // JERRY_USE_MBED_LIBRARY(lwip_interface);

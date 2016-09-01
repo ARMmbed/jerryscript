@@ -11,7 +11,9 @@ VARIANT=
 HEAPSIZE=16
 
 DEBUG=0
-MBED_CLI_FLAGS=--source . --source ../../
+MBED_VERBOSE=0
+
+MBED_CLI_FLAGS=-j0 --source . --source ../../
 
 ifeq ($(BOARD),K64F)
 VARIANT=FRDM
@@ -21,13 +23,21 @@ ifeq ($(DEBUG), 1)
 MBED_CLI_FLAGS += -o debug-info 
 endif
 
+ifeq ($(MBED_VERBOSE), 1)
+MBED_CLI_FLAGS += -v
+else ifeq ($(MBED_VERBOSE), 2)
+MBED_CLI_FLAGS += -vv
+endif
+
 MBED_CLI_FLAGS += -D "CONFIG_MEM_HEAP_AREA_SIZE=(1024*$(HEAPSIZE))"
 
 
-.PHONY: all js2c getlibs
+.PHONY: all js2c getlibs rebuild
 all: source/js_encoded.cpp .mbed
 	mbed target $(BOARD)
 	mbed compile $(MBED_CLI_FLAGS)
+
+rebuild: clean all
 
 clean:
 	rm -rf .build/$(BOARD)

@@ -3,3 +3,5 @@ mbed-events
 .build
 .mbed
 mbed_settings.py
+js/pins.js
+source/js_encoded.cpp
